@@ -1,0 +1,9 @@
+---
+# vars file for zeromq-ric
+repos:
+  srsRAN_Project:
+    address: https://github.com/srsran/srsRAN_Project
+    commit: 9d5dd742a70e82c0813c34f57982f9507f1b6d5d
+  oran-sc-ric:
+    address: https://github.com/srsran/oran-sc-ric
+    commit: e06b125dd55e8001bf97219fc9804691131ca074

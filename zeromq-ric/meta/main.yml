@@ -1,0 +1,4 @@
+galaxy_info:
+  author: Tymon Szczepanowski
+  description: Installs o-ran nearRT based on srsranProject and srs-sc-ric
+  min_ansible_version: 2.1

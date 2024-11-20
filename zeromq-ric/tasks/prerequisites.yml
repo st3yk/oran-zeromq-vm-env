@@ -1,0 +1,48 @@
+---
+- name: Upgrade OS
+  become: yes
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: dist
+  tags:
+    - first_upgrade
+
+- name: Install the build tools and mandatory requirements
+  become: yes
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - cmake
+    - make
+    - g++
+    - pkg-config
+    - libfftw3-dev
+    - libmbedtls-dev
+    - libsctp-dev
+    - libyaml-cpp-dev
+    - libgtest-dev
+    - libzmq3-dev
+
+- name: Add Software Radio Systems srsran repository
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: 'ppa:softwareradiosystems/srsran'
+    state: present
+  tags:
+   - add_ue
+
+- name: Update apt package list
+  become: yes
+  ansible.builtin.apt:
+    update_cache: yes
+  tags:
+   - add_ue
+
+- name: Install srsran package
+  become: yes
+  ansible.builtin.apt:
+    name: srsran
+    state: present
+  tags:
+   - add_ue

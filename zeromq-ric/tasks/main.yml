@@ -1,0 +1,5 @@
+---
+# tasks file for zeromq-ric
+- import_tasks: prerequisites.yml
+- import_tasks: docker.yml
+- import_tasks: sources.yml

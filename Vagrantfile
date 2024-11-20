@@ -1,7 +1,7 @@
 #! vagrant
 
 # As in the requirements
-BOX = bento/ubuntu-22.04
+BOX = "bento/ubuntu-22.04"
 
 Vagrant.configure("2") do |config|
     config.vm.define "oran-zeromq" do |oz|
@@ -14,4 +14,8 @@ Vagrant.configure("2") do |config|
             vb.cpus = 6
             vb.name = "oran-zeromq"
         end
-  end
+        oz.vm.provision "ansible" do |ansible|
+            ansible.playbook="oran-zeromq.yml"
+        end
+    end
+end
