@@ -48,6 +48,6 @@ Follow these steps to get the environment up and running:
     ```
 5. **Follow the documentation to run it all!** \
     Follow [srsran documentation](https://docs.srsran.com/projects/project/en/latest/tutorials/source/near-rt-ric/source/index.html) \
-    Start: Open5GS, oran-sc-ric, gnb and ue! \
+    Start: Open5GS, oran-sc-ric, gnb and ue.
     - srsRAN_Project is in path: /oran/srsRAN_Project
     - oran-ric-sc is in path: /oran/oran-ric-sc

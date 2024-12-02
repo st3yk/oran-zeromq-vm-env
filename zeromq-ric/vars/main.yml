@@ -4,6 +4,9 @@ repos:
   srsRAN_Project:
     address: https://github.com/srsran/srsRAN_Project
     commit: 9d5dd742a70e82c0813c34f57982f9507f1b6d5d
+  srsRAN_4G:
+    address: https://github.com/srsran/srsRAN_4G
+    commit: ec29b0c1ff79cebcbe66caa6d6b90778261c42b8
   oran-sc-ric:
     address: https://github.com/srsran/oran-sc-ric
-    commit: e06b125dd55e8001bf97219fc9804691131ca074
+    commit: 1356ee99cec9489acf8906768a7a8c927b07597d
