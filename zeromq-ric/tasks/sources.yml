@@ -17,25 +17,19 @@
   loop: "{{ repos | dict2items }}"
   when: repos is defined
 
-- name: Create directory for ue config
-  ansible.builtin.file:
-    path: /home/vagrant/.config/srsran/
-    owner: vagrant
-    group: vagrant
-    mode: '0700'
-    state: directory
-  tags:
-    - add_ue
-
-- name: Copy ue config
+- name: Copy configs
   ansible.builtin.copy:
-    src: ue.conf
-    dest: /home/vagrant/.config/srsue/
-  tags:
-    - add_ue
-
-- name: Copy gnb config
-  become: yes
-  ansible.builtin.copy:
-    src: gnb_zmq.yaml
+    src: "{{ item }}"
     dest: /oran/
+  with_items:
+    - gnb_zmq.yaml
+    - ue_zmq.conf
+  
+- name: Copy scripts
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: /home/vagrant/
+    mode: preserve
+  with_items:
+    - build.sh
+    - .tmux.conf
