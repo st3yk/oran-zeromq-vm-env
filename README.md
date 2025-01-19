@@ -51,3 +51,7 @@ Follow these steps to get the environment up and running:
     Start: Open5GS, oran-sc-ric, gnb and ue.
     - srsRAN_Project is in path: /oran/srsRAN_Project
     - oran-ric-sc is in path: /oran/oran-ric-sc
+
+### Notes
+ - Docu for GNU Radio: https://docs.srsran.com/projects/project/en/latest/tutorials/source/srsUE/source/index.html
+ - xApp based on code from [srsran/oran-sc-ric](https://github.com/srsran/oran-sc-ric)
